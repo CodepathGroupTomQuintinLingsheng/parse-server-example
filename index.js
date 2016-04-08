@@ -11,12 +11,12 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
-var devCertPath = path.resolve(__dirname, 'MappedoutPushCertification.p12');
+var devCertPath = path.resolve(__dirname, 'mappedoutPushcer.p12');
 
 var pushConfig = {'ios': [
   {
    pfx: devCertPath, // P12 file only
-   bundleId: 'com.olddonkey.MappedoutPush',  // change to match bundleId
+   bundleId: 'com.olddonkey.Mappedoutpush',  // change to match bundleId
    production: false // dev certificate
   }
  ]
