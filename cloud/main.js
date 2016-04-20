@@ -8,6 +8,7 @@ Parse.Cloud.define('addfriend', function(request, response) {
     var targetuserId = request.params.targetuserId,  
         currentuserId = request.params.currentuserId;  
     
+    response.success("hiya");
     // response.success(targetuserId + " " + currentuserId);
     
     // var query = new Parse.Query('Event');
