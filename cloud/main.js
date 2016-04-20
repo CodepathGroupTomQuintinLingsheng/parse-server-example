@@ -6,7 +6,7 @@ Parse.Cloud.define('hello', function(req, res) {
 Parse.Cloud.define("addfriend", function(request, response) {  
     var targetusername = request.params.targetusername,  
         currentuserId = request.params.currentuserId;  
-  
+    Parse.Cloud.useMasterKey();
     var query = new Parse.Query("_User");
     query.equalTo("_username", targetusername);
     query.find({
@@ -23,6 +23,12 @@ Parse.Cloud.define("addfriend", function(request, response) {
           targetuser.set("followerIDs", userfollowerId);
           //targetuser.push()
         }
+        
+        targetuser.save().then(function(user) {  
+          response.success(user);  
+        }, function(error) {  
+          response.error(error)  
+        });  
         response.success("add successfully");
       },
       error: function() {
