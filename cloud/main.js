@@ -27,7 +27,7 @@ Parse.Cloud.define('addfriend', function(request, response) {
         targetuser.save().then(function(user) {  
           response.success(user);  
         }, function(error) {  
-          response.error(error)  
+          response.error('error2')  
         });  
         response.success("add successfully");
       },
