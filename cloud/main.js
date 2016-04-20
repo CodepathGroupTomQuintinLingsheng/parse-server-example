@@ -8,7 +8,7 @@ Parse.Cloud.define('addfriend', function(request, response) {
         currentuserId = request.params.currentuserId;  
     Parse.Cloud.useMasterKey();
     var query = new Parse.Query(Parse.User);
-    query.equalTo("_id", targetuserId);
+    // query.equalTo("_id", targetuserId);
     query.find({
       success: function(results) {
 
