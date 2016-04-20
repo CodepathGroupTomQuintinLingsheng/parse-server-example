@@ -16,7 +16,7 @@ Parse.Cloud.define('addfriend', function(request, response) {
      reponse.success("hey");
     },
     error: function(error) {
-      response.error("you are a failure");
+      response.error(error);
     }
   });
     // query.equalTo("_id", targetuserId);
