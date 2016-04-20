@@ -3,7 +3,7 @@ Parse.Cloud.define('hello', function(req, res) {
   res.success('Hi');
 });
 
-Parse.Cloud.define("addfriend", function(request, response) {  
+Parse.Cloud.define('addfriend', function(request, response) {  
     var targetuserId = request.params.targetuserId,  
         currentuserId = request.params.currentuserId;  
     Parse.Cloud.useMasterKey();
