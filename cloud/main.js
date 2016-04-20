@@ -4,11 +4,11 @@ Parse.Cloud.define('hello', function(req, res) {
 });
 
 Parse.Cloud.define("addfriend", function(request, response) {  
-    var targetuserId = request.params.targetuserId,  
+    var targetusername = request.params.targetusername,  
         currentuserId = request.params.currentuserId;  
   
     var query = new Parse.Query("_User");
-    query.equalTo("_id", targetuserId);
+    query.equalTo("_username", targetusername);
     query.find({
       success: function(results) {
 
@@ -26,7 +26,7 @@ Parse.Cloud.define("addfriend", function(request, response) {
         response.success("add successfully");
       },
       error: function() {
-        response.error("movie lookup failed");
+        response.error("look up failed");
       }
   });
 }); 
