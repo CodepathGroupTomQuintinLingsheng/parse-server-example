@@ -8,9 +8,17 @@ Parse.Cloud.define('addfriend', function(request, response) {
     var targetuserId = request.params.targetuserId,  
         currentuserId = request.params.currentuserId;  
     
-    response.success(targetuserId + " " + currentuserId);
+    // response.success(targetuserId + " " + currentuserId);
     
-    // var query = new Parse.Query('Event');
+    var query = new Parse.Query('Event');
+    query.find({
+      success: function(results) {
+        response.success("success");
+      }
+      error: function() {
+        response.error("look up failed");
+      }
+    })
     // query.equalTo("_id", targetuserId);
     // query.find({
     //   success: function(results) {
