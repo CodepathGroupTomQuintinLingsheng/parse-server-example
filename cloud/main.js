@@ -10,15 +10,15 @@ Parse.Cloud.define('addfriend', function(request, response) {
     
     // response.success(targetuserId + " " + currentuserId);
     
-    var query = new Parse.Query('Event');
-    query.find({
-      success: function(results) {
-        response.success("success");
-      }
-      error: function() {
-        response.error("look up failed");
-      }
-    })
+    // var query = new Parse.Query('Event');
+    // query.find({
+    //   success: function(results) {
+    //     response.success("success");
+    //   }
+    //   error: function() {
+    //     response.error("look up failed");
+    //   }
+    // })
     // query.equalTo("_id", targetuserId);
     // query.find({
     //   success: function(results) {
